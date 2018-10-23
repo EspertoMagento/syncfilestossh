@@ -1,8 +1,5 @@
 #!/bin/bash
-
-echo -e "\n----------------"
-echo -e "LIST FILES FOUND"
-echo -e "----------------\n"
+clear
 
 if [ "" == "$1" ]; then
 	echo -e "first parameter left: daysback last changes (es ./copy-files.sh daysback output.txt)"
@@ -10,6 +7,11 @@ if [ "" == "$1" ]; then
 fi
 
 if [ "" != "$2" ]; then
+
+	echo -e "\n----------------"
+	echo -e "LIST FILES FOUND"
+	echo -e "----------------\n"
+
 	find www -type f -mtime -"$1" -name '*.*' -print | fgrep -v -e var -e media -e *.sql -e .DS_Store > "$2"	
 	find www -type f -mtime -"$1" -name '*.*' -print | fgrep -v -e var -e media -e *.sql -e .DS_Store
 	
