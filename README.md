@@ -7,6 +7,8 @@ It is thinked for rsync Magento files from local to remote host.
 
 ## Usage
 
+Put this script in the home directory, one directory before the "www" folder.
+
 ./copy-files.sh daysback filename.txt
 
 es. ./copy-files.sh 30 logfile.txt
