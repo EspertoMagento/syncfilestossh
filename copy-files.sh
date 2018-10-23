@@ -5,7 +5,7 @@ echo -e "LIST FILES FOUND"
 echo -e "----------------\n"
 
 if [ "" == "$1" ]; then
-	echo -e "Manca il primo parametro: giorni ultima modifica (es ./copy-files.sh daysback output.txt)"
+	echo -e "first parameter left: daysback last changes (es ./copy-files.sh daysback output.txt)"
 	exit;
 fi
 
@@ -26,15 +26,15 @@ if [ "" != "$2" ]; then
 		set -f          # disable globbing
 		for i in $(cat < "$2"); do
 	
-			echo "scp -P10112 $i seocomdi@wingtsunshop.it:$i"
-			scp -P10112 "$i" seocomdi@wingtsunshop.it:"$i"
+			echo "scp -P22 $i xx@xxx.it:$i"
+			scp -P22 "$i" xx@xxx.it:"$i"
 		done
 	else
 		exit;
 	fi
 	
 else
-	echo -e "Manca il parametro: nome del file di destinazione (es ./copy-files.sh daysback output.txt)"
+	echo -e "second parameter left: destination filename (es ./copy-files.sh daysback output.txt)"
 fi
 
 echo -e "----------------------------------"
